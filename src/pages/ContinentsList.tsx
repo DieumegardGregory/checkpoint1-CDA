@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_CONTINENTS } from '../api/Queries';
 import { Continent } from '../types/typeDefs';
 
 const ContinentsList = () => {
     const [continents, setContinents] = useState<Continent[]>([]);
+    const navigate = useNavigate();
 
     const {loading, error} = useQuery(GET_ALL_CONTINENTS, {
         onCompleted: (data) => {
@@ -13,6 +15,10 @@ const ContinentsList = () => {
     })
     if (loading) return <p>Chargement...</p>
     if (error) return <p>{error.message}</p>
+
+    const handleContinentClick = (code: string) => {
+        navigate(`/countries/${code}`)
+    }
     
     return (
         <>
@@ -23,7 +29,7 @@ const ContinentsList = () => {
                         {continents.map((continent) => (
                             <div className='continent-card' key={continent.code}>
                                 <h3>{continent.name}</h3>
-                                <button>See my countries</button>
+                                <button onClick={() => handleContinentClick(continent.code)}>See my countries</button>
                             </div>
                         ))}
                     </>}

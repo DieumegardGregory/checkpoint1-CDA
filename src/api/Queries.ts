@@ -10,3 +10,15 @@ query GetContinents {
         }
     }
 }`
+
+export const GET_SINGLE_CONTINENT = gql`
+query Continent($code: ID!) {
+    continent(code: $code) {
+        code
+        name
+        countries {
+            code
+            name
+        }
+    }
+}`

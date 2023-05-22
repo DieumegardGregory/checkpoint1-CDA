@@ -12,8 +12,8 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<ContinentsList />} />
-        <Route path='/countries' element={<CountriesList />} />
-        <Route path='/country/:id' element={<CountryDetails />} />
+        <Route path='/countries/:code' element={<CountriesList />} />
+        <Route path='/country/:code' element={<CountryDetails />} />
       </Routes>
     </div>
   );

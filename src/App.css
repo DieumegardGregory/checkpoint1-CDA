@@ -29,3 +29,27 @@ h2, h3, h4 {
   width: 30%;
   margin: 10px;
 }
+
+button {
+  padding: 10px;
+  background-color: lightgreen;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkseagreen;
+}
+
+.countries-list {
+  width: 80%;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.countries-list li {
+  margin: 10px;
+}
