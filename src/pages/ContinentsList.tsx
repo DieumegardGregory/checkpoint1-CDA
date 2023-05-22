@@ -5,6 +5,7 @@ import { GET_ALL_CONTINENTS } from '../api/Queries';
 import { Continent } from '../types/typeDefs';
 
 const ContinentsList = () => {
+    const [filterValue, setFilterValue] = useState("");
     const [continents, setContinents] = useState<Continent[]>([]);
     const navigate = useNavigate();
 
@@ -19,14 +20,22 @@ const ContinentsList = () => {
     const handleContinentClick = (code: string) => {
         navigate(`/countries/${code}`)
     }
+
+    const handleChange = (e: any) => {
+        setFilterValue(e.target.value);
+    }
     
     return (
         <>
             <h2>Our amazing list of continents:</h2>
+            <>
+                <label htmlFor="filter">Filter the list:</label>
+                <input type="text" name="filter" onChange={(e) => handleChange(e)}/>
+            </>
             <div className='continents-container'>
                 {continents.length > 0 && 
                     <>
-                        {continents.map((continent) => (
+                        {continents.filter((item) => item.name.toLowerCase().includes(filterValue.toLowerCase())).map((continent) => (
                             <div className='continent-card' key={continent.code}>
                                 <h3>{continent.name}</h3>
                                 <button onClick={() => handleContinentClick(continent.code)}>See my countries</button>

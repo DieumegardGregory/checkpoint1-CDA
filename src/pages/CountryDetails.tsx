@@ -18,7 +18,7 @@ const CountryDetails = () => {
     })
     if (loading) return <p>Chargement ...</p>;
     if (error) return <p>{error.message}</p>;
-console.log(country);
+    
         return (
         <>
             <h2>Details</h2>

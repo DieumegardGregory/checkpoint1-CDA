@@ -57,8 +57,23 @@ button:hover {
 
 .country-card {
   font-size: 30px;
+  width: 50%;
+  padding: 10px;
+  border: 3px solid rgba(144, 238, 144, 0.4);
+  border-radius: 5px;
+  margin: 0 auto;
 }
 
 .country-card p {
   margin: 10px;
+}
+
+label {
+  margin: 0 10px;
+}
+
+input {
+  height: 30px;
+  text-align: center;
+  caret-color: coral;
 }
