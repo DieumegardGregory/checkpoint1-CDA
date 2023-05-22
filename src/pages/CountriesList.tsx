@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Filter from '../components/Filter/Filter';
 import { useParams, Link } from 'react-router-dom';
 import { Country, Continent } from '../types/typeDefs';
 import { useQuery } from '@apollo/client';
@@ -29,10 +30,7 @@ const CountriesList = () => {
     return (
         <>
             <h2>List of countries for {continent?.name}</h2>
-            <>
-                <label htmlFor="filter">Filter the list:</label>
-                <input type="text" name="filter" onChange={(e) => handleChange(e)}/>
-            </>
+            <Filter handleChange={handleChange} />
             <>
                 {countries.length > 0 && (
                     <ul className='countries-list'>

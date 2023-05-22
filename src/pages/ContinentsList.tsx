@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Filter from '../components/Filter/Filter';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_CONTINENTS } from '../api/Queries';
@@ -28,10 +29,7 @@ const ContinentsList = () => {
     return (
         <>
             <h2>Our amazing list of continents:</h2>
-            <>
-                <label htmlFor="filter">Filter the list:</label>
-                <input type="text" name="filter" onChange={(e) => handleChange(e)}/>
-            </>
+            <Filter handleChange={handleChange} />
             <div className='continents-container'>
                 {continents.length > 0 && 
                     <>
