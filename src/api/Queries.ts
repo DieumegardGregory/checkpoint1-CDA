@@ -9,7 +9,7 @@ query GetContinents {
             name
         }
     }
-}`
+}`;
 
 export const GET_SINGLE_CONTINENT = gql`
 query Continent($code: ID!) {
@@ -21,4 +21,23 @@ query Continent($code: ID!) {
             name
         }
     }
-}`
+}`;
+
+export const GET_COUNTRY = gql`
+query Country($code: ID!) {
+    country(code: $code) {
+        code
+        name
+        native
+        phone
+        capital
+        currency
+        languages {
+            name
+            native
+            rtl
+        }
+        emoji
+        emojiU
+    }
+}`;

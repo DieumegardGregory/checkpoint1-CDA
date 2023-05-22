@@ -13,8 +13,8 @@ const ContinentsList = () => {
             setContinents([...data.continents])
         }
     })
-    if (loading) return <p>Chargement...</p>
-    if (error) return <p>{error.message}</p>
+    if (loading) return <p>Chargement...</p>;
+    if (error) return <p>{error.message}</p>;
 
     const handleContinentClick = (code: string) => {
         navigate(`/countries/${code}`)

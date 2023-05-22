@@ -44,12 +44,21 @@ button:hover {
 
 .countries-list {
   width: 80%;
-  height: 600px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  justify-content: justify;
 }
 
 .countries-list li {
+  margin: 10px;
+}
+
+.country-card {
+  font-size: 30px;
+}
+
+.country-card p {
   margin: 10px;
 }

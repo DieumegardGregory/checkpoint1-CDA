@@ -18,7 +18,7 @@ const CountriesList = () => {
         }
     })
     if (loading) return <p>Chargement ...</p>;
-    if (error) return <p>{error.message}</p>
+    if (error) return <p>{error.message}</p>;
     return (
         <>
             <h2>List of countries:</h2>
@@ -27,7 +27,7 @@ const CountriesList = () => {
                     <ul className='countries-list'>
                         {countries.map((country) => (
                             <Link to={`/country/${country.code}`}>
-                                <li>{country.name}</li>
+                                <li key={country.code}>{country.name}</li>
                             </Link>
                         ))}
                     </ul>
